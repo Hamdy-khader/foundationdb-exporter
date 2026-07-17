@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Docker Login
+      uses: docker/login-action@v4.4.0
+      with:
+        username: "hamdysimplyblock"
+        password: "T4$EFjf@^rfvwxt"
+
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file exporter/Dockerfile --tag simplyblock/foundationdb-exporter:latest
