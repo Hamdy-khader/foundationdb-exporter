@@ -4,7 +4,7 @@ import {renderMetric, Metric} from './utils';
 import {FDBStatus} from './types';
 import {metrics} from './metrics';
 
-fdb.setAPIVersion(730); // TODO: env
+fdb.setAPIVersion(720); // TODO: env
 
 main().catch((err) => {
   console.error(err);
